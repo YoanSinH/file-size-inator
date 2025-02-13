@@ -1,41 +1,60 @@
 {
   "name": "file-size-inator",
-  "displayName": "file-size-inator",
-  "description": "show the current file size in the status bar",
-  "version": "0.0.1",
+  "displayName": "File Size Inator",
+  "description": "Shows file size in the status bar",
+  "version": "1.0.0",
+  "publisher": "Joan (YoanSinH) Cifuentes",
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.50.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoansinh/file-size-inator"
+  },
+  "keywords": [
+    "file-size",
+    "filesize",
+    "file",
+    "size",
+    "status bar"
+  ],
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "icon": "icon.jpg",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "file-size-inator.helloWorld",
-        "title": "Hello World"
+    "configuration": {
+      "title": "File Size Inator",
+      "properties": {
+        "file-size-inator.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable file size display"
+        }
       }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.97.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "@typescript-eslint/eslint-plugin": "^8.22.0",
-    "@typescript-eslint/parser": "^8.22.0",
-    "eslint": "^9.19.0",
-    "typescript": "^5.7.3",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@types/vscode": "^1.50.0",
+    "@types/node": "^14.x.x",
+    "@typescript-eslint/eslint-plugin": "^4.x.x",
+    "@typescript-eslint/parser": "^4.x.x",
+    "eslint": "^7.x.x",
+    "typescript": "^4.x.x",
+    "@vscode/test-electron": "^2.3.8",
+    "mocha": "^10.2.0",
+    "@types/mocha": "^10.0.1"
   }
 }
