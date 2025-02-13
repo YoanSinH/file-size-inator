@@ -3,7 +3,7 @@
   "displayName": "File Size Inator",
   "description": "Shows file size in the status bar",
   "version": "1.0.0",
-  "publisher": "Joan (YoanSinH) Cifuentes",
+  "publisher": "YoanSinH",
   "engines": {
     "vscode": "^1.50.0"
   },
